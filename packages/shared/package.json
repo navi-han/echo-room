@@ -1,0 +1,11 @@
+{
+  "name": "@echo-room/shared",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "main": "src/ws-protocol.ts",
+  "types": "src/ws-protocol.ts",
+  "exports": {
+    ".": "./src/ws-protocol.ts"
+  }
+}
