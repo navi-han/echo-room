@@ -1,0 +1,7 @@
+{$APP_HOST} {
+  encode gzip
+
+  reverse_proxy /api/* server:8080
+  reverse_proxy /ws* server:8080
+  reverse_proxy web:80
+}

@@ -1,0 +1,30 @@
+services:
+  server:
+    build:
+      context: .
+      dockerfile: apps/server/Dockerfile
+    env_file:
+      - deploy/.env.prod
+    restart: unless-stopped
+
+  web:
+    build:
+      context: .
+      dockerfile: apps/web/Dockerfile
+    restart: unless-stopped
+
+  caddy:
+    image: caddy:2.8.4-alpine
+    depends_on:
+      - web
+      - server
+    env_file:
+      - deploy/.env.prod
+    volumes:
+      - ./deploy/Caddyfile:/etc/caddy/Caddyfile
+      - ./deploy/data:/data
+      - ./deploy/config:/config
+    ports:
+      - "80:80"
+      - "443:443"
+    restart: unless-stopped
