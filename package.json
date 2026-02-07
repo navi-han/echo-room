@@ -1,0 +1,15 @@
+{
+  "name": "echo-room",
+  "private": true,
+  "version": "0.1.0",
+  "workspaces": [
+    "apps/web",
+    "packages/shared"
+  ],
+  "scripts": {
+    "build": "npm run build -ws --if-present",
+    "dev:web": "npm run dev -w @echo-room/web",
+    "dev:server": "cd apps/server && ./gradlew bootRun",
+    "test:server": "cd apps/server && ./gradlew test"
+  }
+}

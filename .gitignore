@@ -1,0 +1,34 @@
+# IDE
+.idea/
+
+# Node
+node_modules/
+.npm/
+.npm-cache/
+.gradle-cache/
+*.tsbuildinfo
+
+# Build outputs
+dist/
+build/
+out/
+
+# Logs
+*.log
+
+# Env
+.env
+.env.local
+.env.*.local
+deploy/.env.prod
+
+# OS
+.DS_Store
+
+# Java/Gradle
+.gradle/
+**/build/
+
+# Docker
+deploy/data/
+deploy/config/
